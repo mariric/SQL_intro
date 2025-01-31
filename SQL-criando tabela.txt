@@ -1,0 +1,15 @@
+CREATE TABLE action_figure(id INTEGER PRIMARY KEY, name TEXT, estoque INTEGER, sales INTEGER, rating INTEGER);
+
+INSERT INTO action_figure VALUES(1, "luffy Gear 5 One Piece", 3, 1, 10);
+INSERT INTO action_figure VALUES(2, "Roronoa Zoro One Piece", 6, 2, 9);
+INSERT INTO action_figure VALUES(3, "Onami and Zeus One Piece", 2,2,10);
+INSERT INTO action_figure VALUES(4, "Nico Robin Demon Fluer One Piece", 1, 0, 0);
+INSERT INTO action_figure VALUES(5, "Boa Hancock and Snake Salomé", 10, 6, 8);
+
+SELECT * FROM action_figure;
+
+SELECT * FROM action_figure WHERE sales > 1 ORDER BY sales;
+
+SELECT estoque, COUNT(*) FROM action_figure GROUP BY sales;
+
+

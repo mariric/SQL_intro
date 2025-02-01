@@ -1,0 +1,37 @@
+
+SELECT AVG(Speed) as 'avg_speed'
+FROM pokemon;
+
+SELECT MIN(Speed) as 'min_speed'
+FROM pokemon;
+
+SELECT MAX(Speed) as 'max_speed'
+FROM pokemon;
+
+
+SELECT Speed,
+    CASE
+        WHEN Speed > 100 THEN 'high speed'
+        WHEN Speed > 50 THEN 'good speed'
+        ELSE 'low speed'
+    END AS 'pokemon_speed'
+FROM pokemon;
+
+
+SELECT 
+    CASE
+        WHEN Speed > 100 THEN 'high speed'
+        WHEN Speed > 50 THEN 'goodspeed'
+        ELSE 'low speed'
+    END AS 'pokemon_speed',
+    COUNT(*) AS 'Qtd_speed',
+    AVG(Speed) AS 'avg_speed_per_category'
+FROM pokemon
+GROUP BY pokemon_speed
+HAVING AVG(Speed) > 50;
+
+
+SELECT name, Speed, Attack, Defense
+FROM pokemon
+WHERE (Speed > 100 AND Attack > 80) OR Defense > 90
+ORDER BY type_1;

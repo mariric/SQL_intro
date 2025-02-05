@@ -1,0 +1,28 @@
+/* What does the app's SQL look like? */
+CREATE TABLE kindle (id INTEGER PRIMARY KEY, title TEXT, pages INTEGER);
+
+INSERT INTO kindle VALUES (1, "Fortuna e Ascenção", 773);
+INSERT INTO kindle VALUES (2, "Presságios do Amor", 408);
+INSERT INTO kindle VALUES (3, "Os sete maridos de Evelyn Hugo", 360);
+INSERT INTO kindle VALUES (4, "Vitrine 1", 469);
+INSERT INTO kindle VALUES (5, "Delilah Green Não está nem ai", 426);
+INSERT INTO kindle VALUES (6, "Conversas difíceis: Como discutir o que é mais importante", 406);
+INSERT INTO kindle VALUES (7, "As Cores do Amor", 471);
+
+SELECT * FROM kindle;
+
+ALTER TABLE kindle ADD status TEXT;
+
+SELECT * FROM kindle; 
+
+UPDATE kindle SET status = "complete" WHERE id = 1;
+UPDATE kindle SET status = "complete" WHERE id = 2;
+UPDATE kindle SET status = "complete" WHERE id = 3;
+UPDATE kindle SET status = "incomplete" WHERE id = 6;
+
+SELECT * FROM kindle;
+
+DELETE FROM kindle WHERE id = 6;
+
+SELECT * FROM kindle
+
